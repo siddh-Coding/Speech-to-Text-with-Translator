@@ -17,7 +17,7 @@ const translatePageContent = `
           <textarea
             spellcheck="false"
             readonly
-            disabled
+            
             class="to-text"
             placeholder="Translation"
           ></textarea>
@@ -124,6 +124,7 @@ updateContent(window.location.pathname);
 function loadScript(src) {
   const script = document.createElement("script");
   script.src = src;
+  script.type = "module"
   script.async = true;
   document.head.appendChild(script);
 }

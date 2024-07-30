@@ -1,6 +1,6 @@
-import { AppError, handleApiCall, displayError } from './errorHandler.js';
+import { AppError, handleApiCall } from './errorHandler.js';
 import { translateText, populateLanguageDropdowns } from './translator.js';
-import { countries } from './languages.js';
+// import { countries } from './languages.js';
 
 const countries = {
     "am-ET": "Amharic",
@@ -134,18 +134,7 @@ translateBtn.addEventListener("click", async () => {
 });
 
 
-async function translateText(text, from, to) {
-    let apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-        throw new AppError('Translation service is unavailable. Please try again later.', 'API');
-    }
-    const data = await response.json();
-    if (data.responseStatus !== 200) {
-        throw new AppError('Unable to translate text. Please try again.', 'Translation');
-    }
-    return data.responseData.translatedText;
-}
+
 
 icons.forEach(icon => {
     icon.addEventListener("click", ({ target }) => {
