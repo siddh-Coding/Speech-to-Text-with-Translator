@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Speech to Text</title>
+    <script src="languages.js"></script>
+    <style>
+      body.fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+      }
+      body.fade-in {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+      .translate {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="container"></div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="js.js"></script>
+    <script src="script.js"></script>
+    <!-- <script type="module" src="myScript.js"></script> -->
+  </body>
+</html>
